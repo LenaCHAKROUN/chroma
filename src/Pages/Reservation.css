@@ -1,0 +1,116 @@
+/* Appliquer une police élégante et moderne */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Application globale de la police */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f8; /* Fond doux et clair */
+  margin: 0;
+  padding: 0;
+}
+
+/* Style principal de la page de réservation */
+.reservation-page {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f9;  /* Fond très clair */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mise en page des sièges */
+.seats-layout {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 sièges par ligne */
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* Style des sièges */
+.seat {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Siège disponible */
+.seat.available {
+  background-color: #4E9F3D; /* Vert doux */
+  color: white;
+}
+
+/* Siège occupé */
+.seat.occupied {
+  background-color: #A8A8A8; /* Gris léger */
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Siège sélectionné */
+.seat.selected {
+  background-color: #FF6F61; /* Rouge corail */
+}
+
+/* Siège sélectionné multiple */
+.seat.selected-multiple {
+  background-color: #9C27B0; /* Violet élégant */
+}
+
+/* Timer */
+.timer {
+  font-size: 18px;
+  color: red;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* Bouton de réservation */
+.reserve-button {
+  background-color: #FF6F61; /* Rouge corail */
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-button:hover {
+  background-color: #FF4F40; /* Rouge plus foncé au survol */
+}
+
+/* Bouton retour */
+.back-button {
+  margin-top: 15px;
+  background-color: #333;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #555; /* Gris plus clair au survol */
+}
+
+/* Labels des lignes */
+.row-label {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 15px 0;
+  color: #333;
+}

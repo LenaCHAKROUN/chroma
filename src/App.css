@@ -1,0 +1,752 @@
+
+/* App Logo */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Header Principal */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+/* Section des Événements */
+.event {
+  display: flex;
+  margin: 20px 10%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  align-items: center;
+}
+
+.event img {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.event img:hover {
+  transform: scale(1.1);
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+}
+
+.moviedescription {
+  margin-left: 20px;
+  flex: 1;
+}
+
+h4 {
+  margin-left: 10%;
+}
+
+.type {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Recherche */
+.recherche {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px 0;
+  animation: fadeIn 1s ease-out;
+}
+
+.recherche button {
+  background-color: #4e4e4e;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recherche button:hover {
+  background-color: #1e1e1e;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.recherche button:active {
+  transform: scale(1);
+  background-color: #3c3c3c;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Boutons */
+button {
+  background-color: transparent;
+  color: #e63946;
+  border: 2px solid #e63946;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e63946;
+  color: white;
+}
+
+/* Zone de Texte pour les Commentaires */
+.comment-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  height: 100px;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+.comment-textarea:focus {
+  border-color: #e63946;
+  outline: none;
+}
+
+.comment-submit {
+  background-color: #e63946;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.comment-submit:hover {
+  background-color: #c52828;
+}
+
+/* Section des Commentaires */
+.comments-section {
+  margin-top: 15px;
+}
+
+.comment {
+  background-color: #f4f4f4;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2C3E50;
+  padding: 10px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+  color: #BDC3C7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #FFEB3B;
+}
+
+/* Conteneur pour les Événements */
+.program-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.icon-container {
+  flex: 1;
+  max-width: 400px;
+  margin-left: 20px;
+}
+.login {
+  
+  
+    background-image: url('https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Remplace par ton image */
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+    min-height: 100vh; /* Assurer que l'élément occupe toute la hauteur de l'écran */
+    width: 100%; /* S'assurer que l'élément occupe toute la largeur de l'écran */
+    padding: 20px; /* Ajoute un padding si nécessaire */
+    display: flex; /* Utiliser flexbox pour centrer le contenu */
+    flex-direction: column; /* Afficher le contenu en colonne */
+
+  
+  
+}
+
+button {
+  background-color: transparent; /* Fond transparent pour un look plus simple */
+  color: #e63946; /* Texte rouge pour correspondre à l'harmonie visuelle */
+  border: 2px solid #e63946; /* Bordure rouge */
+  padding: 8px 15px; /* Espacement à l'intérieur du bouton */
+  font-size: 14px; /* Taille de la police */
+  font-weight: bold; /* Texte en gras */
+  border-radius: 25px; /* Bords arrondis */
+  cursor: pointer; /* Curseur en forme de main */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition simple */
+}
+
+
+
+.ticket-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+
+.ticket {
+  width: 450px;
+  background-color: #e1e1e1;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ddd;
+}
+
+.ticket-header {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 1px;
+  background-color: #292b2c;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-content {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ticket-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1.1em;
+  color: #444;
+}
+
+.ticket-detail span {
+  font-weight: 600;
+  color: #333;
+}
+
+.ticket-footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1.2em;
+  color: #888;
+}
+
+.ticket-button {
+  background-color: #292b2c;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.ticket-button:hover {
+  background-color: #444;
+}
+
+.ticket-button:active {
+  background-color: #333;
+}
+
+/* Nouvelle section ajoutée pour la phrase mignonne */
+.ticket-note {
+  text-align: center;
+  font-size: 1.1em;
+  color: #333;
+  font-style: italic;
+  margin-top: 25px;
+  color: #5f6368;
+}
+
+
+
+
+.home {
+    background-image: url('https://images.unsplash.com/photo-1524014482380-0988169f598d?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Remplace par l'URL de ton image */
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+    min-height: 100vh; /* Assurer que l'élément occupe toute la hauteur de l'écran */
+    width: 100%; /* S'assurer que l'élément occupe toute la largeur de l'écran */
+    display: flex; /* Utiliser flexbox pour centrer le contenu */
+    justify-content: center; /* Centrer le contenu horizontalement */
+ 
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.aff {
+  color: white;
+}
+
+
+
+.money {
+  color: white;
+  display: inline-block; /* Garde le mot en ligne */
+  opacity: 0; /* Cache le mot initialement */
+  animation: fadeIn 2s ease-in forwards; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* Légère montée */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Position finale */
+  }
+  
+  }
+.offre {
+  background-image: url('https://images.unsplash.com/photo-1581593439309-14b03e56b40d?q=80&w=2580&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Fond clair */
+  padding: 40px;
+  text-align: center;
+  background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+    min-height: 100vh; /* Assurer que l'élément occupe toute la hauteur de l'écran */
+    width: 100%; /* S'assurer que l'élément occupe toute la largeur de l'écran */
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.offer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.offer-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.offer-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.offer-content {
+  padding: 10px;
+}
+
+.offer-content h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e63946; /* Code couleur principal (rouge) */
+  margin-bottom: 10px;
+}
+
+.offer-content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.features {
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.features li {
+  margin-bottom: 8px;
+}
+
+button {
+  
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+button:focus {
+  outline: none;
+}
+
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #a18989;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.offer-badge span {
+  margin-left: 5px;
+}
+
+button svg {
+  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .offer-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+button:focus {
+  outline: none;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.like-button:hover {
+  transform: scale(1.2); /* Agrandir le cœur au survol */
+}
+
+/* Mise en page moderne et épurée */
+.profile-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Nouveau background avec transparence */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px); /* Flou d'arrière-plan */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Image d'arrière-plan globale */
+body {
+  background-image: url('https://images.unsplash.com/photo-1584728091931-4988fd921e88?q=80&w=2752&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur principal */
+.profile-container {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92); /* Blanc semi-transparent */
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Titre */
+.profile-container h1 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Photo de profil */
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.profile-picture img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #555; /* Couleur sobre */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Informations utilisateur */
+.profile-info {
+  text-align: left;
+  margin: 20px auto;
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.profile-info p span {
+  font-weight: 600;
+  color: #222; /* Soulignement léger */
+}
+
+/* Boutons */
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.edit {
+  background-color: #0077cc;
+  color: white;
+}
+
+button.edit:hover {
+  background-color: #005fa3;
+}
+
+button.logout {
+  background-color: #d9534f;
+  color: white;
+}
+
+button.logout:hover {
+  background-color: #b52a26;
+}
+.register {
+  background-image: url('https://images.unsplash.com/photo-1578321270951-88bd84d09a64?q=80&w=2907&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover; /* L'image couvre tout l'écran */
+  background-position: center center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+  min-height: 100vh; /* Assurer que l'élément occupe toute la hauteur de l'écran */
+  width: 100%; /* S'assurer que l'élément occupe toute la largeur de l'écran */
+  justify-content: center; /* Centrer le contenu horizontalement */
+}
+
+.home {
+  position: relative;
+}
+
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(5px);
+  z-index: 1;
+}
+
+.movie-details-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  overflow: hidden;  /* Empêche que l'affiche dépasse */
+}
+
+.movie-details-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-poster-in-card {
+  width: 80%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.reserve-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
