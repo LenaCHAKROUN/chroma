@@ -14,7 +14,7 @@ import Add from "./Pages/Add";
 import Edit from "./Pages/Edit"; // Assurez-vous que le chemin est correct
 import Edit1 from "./Pages/Edit1"; // Assurez-vous que le chemin est correct
 import Add1 from "./Pages/Add1";
-
+import Connexion from "./Pages/Connexion";
 function App() {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
@@ -38,6 +38,7 @@ function App() {
         <Route path="/login" element={<Login />} /> {/* Route vers Login */}
         <Route path="/reservation" element={<Reservation />} />
         <Route path="/offre" element={<Offre />} />
+        <Route path="/connexion" element={<Connexion />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/add" element={<Add />} />
         <Route path="/add1" element={<Add1 />} />

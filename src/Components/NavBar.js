@@ -1,59 +1,77 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Container, Nav, Modal, Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { login } from '../JS/Actions/user';
+import { useDispatch } from 'react-redux';
 
 const NavBar = () => {
-    const [showModal, setShowModal] = useState(false);
-    const [isLogin, setIsLogin] = useState(true);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
-    const navigate = useNavigate();
+    const [user, setUser] = useState({})
+    // const errors = useSelector((state) => state.userReducer.errors);
+    // const isAuth = useSelector((state) => state.userReducer.isAuth);
+    const dispatch = useDispatch()
+    
 
-    useEffect(() => {
-        const loggedInEmail = localStorage.getItem('loggedInEmail');
-        setIsLoggedIn(!!loggedInEmail);
-        setIsAdmin(loggedInEmail === 'lena@gmail.com');
-    }, [isLoggedIn]);
+    const handleChange = (e) => {
+        setUser({ ...user, [e.target.name]: e.target.value})
+    }
+
+    const handleUser = (e) => {
+        e.preventDefault();
+        dispatch(login(user))
+        navigate('/')
+        
+    }
+    // const [showModal, setShowModal] = useState(false);
+    // const [isLogin, setIsLogin] = useState(true);
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const [isAdmin, setIsAdmin] = useState(false);
+    // const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     const loggedInEmail = localStorage.getItem('loggedInEmail');
+    //     setIsLoggedIn(!!loggedInEmail);
+    //     setIsAdmin(loggedInEmail === 'lena@gmail.com');
+    // }, [isLoggedIn]);
 
     const handleShow = () => setShowModal(true);
     const handleClose = () => setShowModal(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
 
-        if (isLogin) {
-            const storedUser = JSON.parse(localStorage.getItem(email));
-            if (storedUser && storedUser.password === password) {
-                localStorage.setItem('loggedIn', true);
-                localStorage.setItem('loggedInEmail', email);
-                setIsLoggedIn(true);
-                setIsAdmin(email === 'lena@gmail.com');
-                navigate('/profile');
-            } else {
-                alert('Email ou mot de passe incorrect');
-            }
-        } else {
-            if (localStorage.getItem(email)) {
-                alert('Cet email est déjà utilisé');
-            } else {
-                localStorage.setItem(email, JSON.stringify({ email, password }));
-                alert('Compte créé avec succès!');
-                setIsLogin(true);
-            }
-        }
+    //     if (isLogin) {
+    //         const storedUser = JSON.parse(localStorage.getItem(email));
+    //         if (storedUser && storedUser.password === password) {
+    //             localStorage.setItem('loggedIn', true);
+    //             localStorage.setItem('loggedInEmail', email);
+    //             setIsLoggedIn(true);
+    //             setIsAdmin(email === 'lena@gmail.com');
+    //             navigate('/profile');
+    //         } else {
+    //             alert('Email ou mot de passe incorrect');
+    //         }
+    //     } else {
+    //         if (localStorage.getItem(email)) {
+    //             alert('Cet email est déjà utilisé');
+    //         } else {
+    //             localStorage.setItem(email, JSON.stringify({ email, password }));
+    //             alert('Compte créé avec succès!');
+    //             setIsLogin(true);
+    //         }
+    //     }
 
-        handleClose();
-    };
+    //     handleClose();
+    // };
 
-    const handleLogout = () => {
-        localStorage.removeItem('loggedIn');
-        localStorage.removeItem('loggedInEmail');
-        setIsLoggedIn(false);
-        setIsAdmin(false);
-        navigate('/');
-    };
+    // const handleLogout = () => {
+    //     localStorage.removeItem('loggedIn');
+    //     localStorage.removeItem('loggedInEmail');
+    //     setIsLoggedIn(false);
+    //     setIsAdmin(false);
+    //     navigate('/');
+    // };
 
     return (
         <div>
@@ -67,9 +85,10 @@ const NavBar = () => {
                         <Nav.Link as={Link} to="/">Cinema</Nav.Link>
                         <Nav.Link as={Link} to="/login">Événements</Nav.Link>
                         <Nav.Link as={Link} to="/offre">Offres</Nav.Link>
+                        <Nav.Link as={Link} to="/connexion">connexion</Nav.Link>
                     </Nav>
 
-                    {isLoggedIn ? (
+                    {/* {isLoggedIn ? (
                         <>
                             <Button variant="outline-light" onClick={() => navigate('/profile')}>
                                 Mon Profil
@@ -79,8 +98,8 @@ const NavBar = () => {
                             </Button>
                         </>
                     ) : (
-                        <Button className="btn-connexion" onClick={handleShow} variant="outline-light">Connexion</Button>
-                    )}
+                        <Link to={"/connexion"}><Button className="btn-connexion" onClick={handleShow} variant="outline-light">Connexion</Button></Link>
+                    )} */}
                 </Container>
             </Navbar>
 
@@ -92,19 +111,19 @@ const NavBar = () => {
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="Entrez votre email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                            <Form.Control type="email" placeholder="Entrez votre email" value={email} name="email" onChange={handleChange} required />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Mot de passe</Form.Label>
-                            <Form.Control type="password" placeholder="Entrez votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                            <Form.Control type="password" placeholder="Entrez votre mot de passe" value={password} name="password" onChange={handleChange}  required />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            {isLogin ? 'Se connecter' : 'Créer un compte'}
+                            {/* {isLogin ? 'Se connecter' : 'Créer un compte'} */}
                         </Button>
                     </Form>
                     <div className="mt-3">
-                        <Button variant="link" onClick={() => setIsLogin(!isLogin)}>
-                            {isLogin ? 'Pas de compte ? Créer un compte' : 'Déjà un compte ? Se connecter'}
+                        <Button variant="link" onClick={handleUser}>
+                            {/* {isLogin ? 'Pas de compte ? Créer un compte' : 'Déjà un compte ? Se connecter'} */}
                         </Button>
                     </div>
                 </Modal.Body>
